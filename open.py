@@ -3,26 +3,20 @@ from nltkrun import classify
 from html.parser import HTMLParser
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+import sys
+import re
 
-class MLStripper(HTMLParser):
-    
-    def __init__(self):
-        self.reset()
-        self.strict = False
-        self.convert_charrefs= True
-        self.fed = []
 
-    def handle_data(self, d):
-        self.fed.append(d)
-
-    def get_data(self):
-        return ''.join(self.fed)
+driver = webdriver.Firefox()
+driver.get("https://web.whatsapp.com/")
+time.sleep(2)
+wait = WebDriverWait(driver, 600)
 
 def strip_tags(html):
-    s = MLStripper()
-    s.feed(html)
-    return s.get_data()
-
+    return re.sub('<[^<]+?>', '', html)
 
 def send_message(target, string):
     x_arg = '//span[contains(@title,' + target.lower() + ')]'
@@ -48,23 +42,24 @@ def mainMessage(sleep=0):
             time.sleep(sleep)
             i = i+1
 
-        messages = driver.find_elements_by_css_selector(".ZhF0n")[-no_messages:]
+        try :
 
-        for message in messages:
-            mess = strip_tags(message.text)
-            group_name = "'" + classify(mess)[0] + "'"
-            print(mess)
+            messages = driver.find_elements_by_css_selector(".ZhF0n")[-no_messages:]
 
-            send_message(group_name, mess)
-            alert1 = driver.SwitchTo().Alert()
-            alert1.Accept()
+            for message in messages:
+                mess = strip_tags(message.text)
+                group_name = "'" + classify(mess)[0] + "'"
+                print(mess)
+
+                send_message(group_name, mess)
+        except :
+            pass
+#            alert1 = driver.SwitchTo().Alert()
+#            alert1.Accept()
 
 
-driver = webdriver.Firefox()
-driver.get("https://web.whatsapp.com/")
-time.sleep(2)
 
-count = 10
+count = 8
 while 1:
     mainMessage(count)
     time.sleep(1)
