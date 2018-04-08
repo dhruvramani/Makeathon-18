@@ -17,6 +17,17 @@ training_data.append({"class":"work", "sentence":"team coordination is of utmost
 training_data.append({"class":"work", "sentence":"call me asap"})
 training_data.append({"class":"work", "sentence":"need to talk"})
 training_data.append({"class":"work", "sentence":"come to my office"})
+training_data.append({"class":"work", "sentence":"do the tasks by today"})
+training_data.append({"class":"work", "sentence":"write the code"})
+training_data.append({"class":"work", "sentence":"give the presentation"})
+training_data.append({"class":"work", "sentence":"talk to the HR"})
+training_data.append({"class":"work", "sentence":"why are you late?"})
+training_data.append({"class":"work", "sentence":"you got your promotion"})
+training_data.append({"class":"work", "sentence":"no diwali bonus"})
+training_data.append({"class":"work", "sentence":"get some interns"})
+training_data.append({"class":"work", "sentence":"you got the promotion"})
+training_data.append({"class":"work", "sentence":"you can't come late"})
+
 
 training_data.append({"class":"home", "sentence":"Son failed at school"})
 training_data.append({"class":"home", "sentence":"Bring vegetables while coming back"})
@@ -31,8 +42,11 @@ training_data.append({"class":"home", "sentence":"get it fixed by the plumber"})
 training_data.append({"class":"home", "sentence":"i love you mom"})
 training_data.append({"class":"home", "sentence":"i love you dad"})
 training_data.append({"class":"home", "sentence":"i miss you parents"})
-training_data.append({"class":"spam", "sentence":"get the car from garage"})
-training_data.append({"class":"spam", "sentence":"we'll eat outside"})
+training_data.append({"class":"home", "sentence":"get the car from garage"})
+training_data.append({"class":"home", "sentence":"we'll eat outside"})
+training_data.append({"class":"home", "sentence":"good night babe"})
+training_data.append({"class":"home", "sentence":"dinner is ready"})
+training_data.append({"class":"home", "sentence":"call the plumber"})
 
 
 training_data.append({"class":"travel", "sentence":"tickets have been booked"})
@@ -55,6 +69,8 @@ training_data.append({"class":"travel", "sentence":"airline tickets"})
 training_data.append({"class":"travel", "sentence":"travel agency"})
 training_data.append({"class":"travel", "sentence":"trip"})
 training_data.append({"class":"travel", "sentence":"hotels"})
+training_data.append({"class":"travel", "sentence":"stomach is upset"})
+training_data.append({"class":"travel", "sentence":"happy journey babe"})
 
 
 training_data.append({"class":"spam", "sentence":"buy a credit card"})
@@ -73,6 +89,7 @@ training_data.append({"class":"spam", "sentence":"earn money quick"})
 training_data.append({"class":"spam", "sentence":"invest in mutual fund"})
 training_data.append({"class":"spam", "sentence":"this is the best offer possible"})
 training_data.append({"class":"spam", "sentence":"heavy discount"})
+training_data.append({"class":"spam", "sentence":"free hotels"})
 
 #print ("%s sentences of training data" % len(training_data))
 
