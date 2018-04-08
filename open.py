@@ -59,7 +59,7 @@ def mainMessage(sleep=0):
 
 
 
-count = 8
+count = 4
 while 1:
     mainMessage(count)
     time.sleep(1)
