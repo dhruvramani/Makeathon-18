@@ -6,19 +6,11 @@ from selenium.webdriver.common.by import By
 import time
 import sys
 
-# Replace below path with the absolute path
-# to chromedriver in your computer
-#driver = webdriver.Chrome('./chromedriver')
 driver = webdriver.Firefox()
-
-
 driver.get("https://web.whatsapp.com/")
 wait = WebDriverWait(driver, 600)
 
-# Replace 'Friend's Name' with the name of your friend
-# or the name of a group
 target = '"Nabagata Saha"'
-# Replace the below string with your own message
 string = "Hello sexy"
 
 def web_driver_quit():
@@ -36,6 +28,6 @@ def send_message(target, string):
 
 if __name__ == "__main__":
     send_message(target, string)
-    alert1 = driver.SwitchTo().Alert()
+    alert1 = driver.SwitchTo().Alert() #remove browser pop-up
     alert1.Accept()
     web_driver_quit()
